@@ -4,6 +4,12 @@ import numpy as np
 import pandas as pd
 import requests as req
 
+print("Welcome to my simple script which calls for net official development assistance statistic for a country.")
+
+print("Putting together country list....")
+
+
+
 request_countries = req.get('http://api.worldbank.org/v2/countries?format=json').json()
 
 
@@ -22,6 +28,11 @@ for i in range(len(country_list)):
         iso_codes.append(country_list[i][1][j]['iso2Code'])
         name.append(country_list[i][1][j]['name'])
 
+query = input("Do you want to see a list of available countries? (y/n)")
+if query == "y":
+    for i in range(len(country_list)):
+        for j in range(0, 49):
+            print(country_list[i][1][j]['name'])
 
 country_info = dict(zip(name, iso_codes))
 
