@@ -28,7 +28,7 @@ for i in range(len(country_list)):
         iso_codes.append(country_list[i][1][j]['iso2Code'])
         name.append(country_list[i][1][j]['name'])
 
-query = input("Do you want to see a list of available countries? (y/n)")
+query = input("Do you want to see a list of available countries? (y/n) ")
 if query == "y":
     for i in range(len(country_list)):
         for j in range(0, 49):
@@ -36,7 +36,7 @@ if query == "y":
 
 country_info = dict(zip(name, iso_codes))
 
-country = input("What country are you looking for?")
+country = input("What country are you looking for? ")
 
 #def wb_find_data(country):
 for name, iso_codes in country_info.items():
